@@ -146,7 +146,7 @@ public abstract class AbstractEclipseStoreRepository<E, ID> implements EclipseSt
 	}
 	
 	protected void store() {
-		final Persister persister = Objects.requireNonNull(getPersister());
+		final Persister persister = Objects.requireNonNull(getPersister(), "No EclipseStore Persister (or StorageManager) was provided.");
 		persister.store(entityMap);
 	}
 	
